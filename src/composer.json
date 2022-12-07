@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "daishiman/solid_learn",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "SOLID 原則の学習",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
