@@ -13,6 +13,14 @@ Build a simple laravel development environment with docker-compose. Compatible w
 
 **詳細設定は [wiki](https://github.com/daishiman/initial-setting-laravel/wiki) 参照**
 
+### クローンする
+
+```bash
+git clone git@github.com:daishiman/solid_leran.git
+cd solid_leran
+make create-project
+```
+
 1. Click [Use this template](https://github.com/daishiman/initial-setting-laravel)
 2. Git clone & change directory
 3. Execute the following command
