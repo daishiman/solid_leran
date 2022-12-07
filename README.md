@@ -21,14 +21,40 @@ cd solid_leran
 make create-project
 ```
 
-1. Click [Use this template](https://github.com/daishiman/initial-setting-laravel)
-2. Git clone & change directory
-3. Execute the following command
+### .env の作成
+- アプリケーション名の変更
+
+.env.example をコピーして .env とファイル名をを変更する
+
+### プロジェクトを作成する
+
+下記のコマンドでプロジェクトを作成する
 
 ```bash
-$ make create-project # Install the latest Laravel project
-$ make install-recommend-packages # Optional
+make create-project
 ```
+
+### ライブラリの導入
+
+- [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper)
+- [friendsofphp/php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer)
+- [nunomaduro/larastan](https://github.com/nunomaduro/larastan)
+- [nunomaduro/phpinsights](https://github.com/nunomaduro/phpinsights)
+-
+
+```bash
+make install-recommend-packages
+```
+
+### 導入したライブラリを使用する
+
+```bash
+make quality
+```
+
+### Laravel ダッシュボードの確認
+
+下記の URL を叩き、Laravel のダッシュボードに遷移するを確認する
 
 http://localhost
 

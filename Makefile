@@ -30,6 +30,7 @@ install-recommend-packages:
 	docker compose exec app composer require --working-dir=tools/php-cs-fixer friendsofphp/php-cs-fixer
 	docker compose exec app mkdir -p tools/larastan
 	docker compose exec app composer require --dev --working-dir=tools/larastan nunomaduro/larastan
+	docker compose exec app composer update
 
 init:
 	docker compose up -d --build
