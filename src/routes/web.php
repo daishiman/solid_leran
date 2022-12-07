@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 use App\Mail\Test;
 use Illuminate\Support\Facades\Mail;
