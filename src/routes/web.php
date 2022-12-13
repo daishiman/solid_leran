@@ -1,10 +1,8 @@
 <?php
 
-declare(strict_types=1);
-
-use App\Mail\Test;
-use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    Mail::to('test@example.com')->send(new Test());
-    return 'メール送信しました！';
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+require __DIR__.'/auth.php';
