@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "daishiman/solid_learn",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "SOLID 原則の学習",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
@@ -12,15 +12,15 @@
         "laravel/tinker": "^2.7"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.6",
+        "barryvdh/laravel-debugbar": "^3.7",
         "barryvdh/laravel-ide-helper": "^2.12",
         "beyondcode/laravel-dump-server": "^1.8",
-        "doctrine/dbal": "^3.3",
+        "doctrine/dbal": "^3.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
-        "nunomaduro/phpinsights": "^2.4",
+        "nunomaduro/phpinsights": "^2.6",
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0",
         "ucan-lab/laravel-dacapo": "^5.1"

@@ -18,6 +18,7 @@ create-project:
 	@make fresh
 
 install-recommend-packages:
+	docker compose exec app composer update
 	docker compose exec app composer require --dev ucan-lab/laravel-dacapo
 	docker compose exec app composer require --dev barryvdh/laravel-ide-helper
 	docker compose exec app composer require --dev beyondcode/laravel-dump-server
@@ -107,7 +108,7 @@ dacapo:
 
 rollback-test:
 	docker compose exec app php artisan migrate:fresh
-	docker compose exec app php artisan migrate:refresh
+	docker compose exec app php artisan migrate:refresh --seed
 
 tinker:
 	docker compose exec app php artisan tinker

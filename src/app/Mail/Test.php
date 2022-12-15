@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Mail;
 
@@ -17,7 +19,6 @@ final class Test extends Mailable
      */
     public function __construct()
     {
-        
     }
 
     /**
