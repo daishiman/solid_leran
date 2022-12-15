@@ -11,9 +11,7 @@
 ### プルリク関連
 
 - [ ] マージ先のブランチ名が正しいことを確認
-- [ ] ユースケース図の修正
-- [ ] クラス図の修正
-- [ ] シーケンス図の修正
+- [ ] アサインを自分に選択したことを確認
 
 ### コード関連
 
@@ -22,21 +20,19 @@
 
 ### テスト関連（実施したものをチェック）
 
-- [ ] composer dump-autoload新規エラー無し
-- [ ] PHP-CS-Fixer の実行(make php-cs-fix)
-- [ ] larastan の実行(make larastan)
-- [ ] php insights の実行(make insights-fix)
+- [ ] composer dump-autoload を新規エラー無し
+- [ ] make quality を実行しエラー無し　（PHP-CS-Fixer, larastan, php insights　を実行）
 - [ ] phpunit 確認(./vendor/bin/phpunit tests/Feature --group XXXXX --testdox)
 - [ ] マイグレーションファイル更新時のロールバック動作確認
 - [ ] フロントエンドと結合しての動作確認
 
 ## チケットへのリンク
 
-- https://mtq-dev.atlassian.net/browse/STEP1-
+-
 
 ## 対象のAPIのパス
 
-- http://localhost:80/api/XXXXX/YYYYY
+- http://localhost
 
 ## やらないこと
 
