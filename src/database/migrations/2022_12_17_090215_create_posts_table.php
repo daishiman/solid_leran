@@ -11,11 +11,14 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id()->comment('投稿ID');
+            $table->string('title', 100)->comment('タイトル');
+            $table->text('content')->comment('コンテンツ');
+            $table->timestamp('created_at')->useCurrent()->comment('登録日時');
+            $table->timestamp('updated_at')->useCurrent()->comment('更新日時');
         });
     }
 
@@ -24,7 +27,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('posts');
     }
