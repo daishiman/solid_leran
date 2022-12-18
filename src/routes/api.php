@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Post\StoreController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -10,3 +11,4 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::post('/post', [PostController::class, 'store']);
+Route::post('/srp-post', StoreController::class);
