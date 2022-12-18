@@ -21,7 +21,6 @@ class PostTest extends TestCase
     }
 
     /**
-     * A basic feature test example.
      *
      * @return void
      */
@@ -30,18 +29,37 @@ class PostTest extends TestCase
         $url = '/api/post';
 
         $query = [
-            'title'      => 'テストタイトル',
-            'content'    => 'テストコンテンツ',
+            'title'   => 'テストタイトル',
+            'content' => 'テストコンテンツ',
         ];
 
         $response = $this->json('POST', $url, $query);
 
-        $response->assertStatus(200);
+        $response->assertStatus(201);
         $this->assertDatabaseCount(self::TABLE_NAME, 1);
         $response->assertJsonFragment([
-            'id'         => 1,
-            'title'      => 'テストタイトル',
-            'content'    => 'テストコンテンツ',
+            'id'      => 1,
+            'title'   => 'テストタイトル',
+            'content' => 'テストコンテンツ',
         ]);
+    }
+
+    /**
+     *
+     * @return void
+     */
+    public function test_バリデーションエラー_異常系(): void
+    {
+        $url = '/api/post';
+
+        $query = [
+            'title'   => null,
+            'content' => null,
+        ];
+
+        $response = $this->json('POST', $url, $query);
+
+        $response->assertStatus(400);
+        $this->assertDatabaseCount(self::TABLE_NAME, 0);
     }
 }

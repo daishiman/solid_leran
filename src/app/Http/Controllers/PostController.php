@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\InternalServerException;
 use App\Models\Post;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -16,6 +17,10 @@ use Throwable;
 final class PostController extends Controller
 {
     /**
+     * @param Request $request
+     *
+     * @return JsonResponse
+     *
      * @throws Throwable
      */
     public function store(Request $request): JsonResponse
@@ -30,7 +35,10 @@ final class PostController extends Controller
         $validator = Validator::make($input, $rules);
 
         if ($validator->fails()) {
-            return response()->json(['バリデーションエラー']);
+            return response()->json([
+                'status' => 'validation error',
+                'errors' => $validator->errors(),
+            ], 400);
         }
 
         try {
@@ -46,9 +54,9 @@ final class PostController extends Controller
             Log::error($e->getMessage());
             DB::rollBack();
 
-            throw new $e();
+            return throw new InternalServerException('投稿できませんでした。');
         }
 
-        return response()->json(['post' => $post], 200);
+        return response()->json(['post' => $post], 201);
     }
 }
