@@ -22,5 +22,6 @@ Route::get('/', function () {
 
 Route::get('/test', function () {
     Mail::to('test@example.com')->send(new Test());
+
     return 'メール送信しました！';
 });
